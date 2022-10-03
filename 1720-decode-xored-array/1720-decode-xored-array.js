@@ -10,8 +10,7 @@ var decode = function(encoded, first) {
     
     for(let i=0; i<encoded.length; i++)
     {
-        let element = arr[i] ^ encoded[i];
-        arr.push(element);
+        arr[i+1] = arr[i] ^ encoded[i];
     }
     
     return arr;
