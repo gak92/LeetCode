@@ -4,45 +4,38 @@
  * @param {string} ruleValue
  * @return {number}
  */
+
+let counter = (items, ruleValue, idx) =>
+{
+    let count = 0;
+    for(let i=0; i<items.length; i++)
+    {
+        if(items[i][idx] == ruleValue)
+        {
+            count++;
+        }
+    }
+    return count;
+}
+
 var countMatches = function(items, ruleKey, ruleValue) {
-    let res = [];
+    // let res = [];
     let count = 0;
     
     if(ruleKey == 'type')
     {
-        for(let i=0; i<items.length; i++)
-        {
-            if(items[i][0] == ruleValue)
-            {
-                res.push(items[i]);
-                count++;
-            }
-        }
+        count = counter(items, ruleValue, 0);   
     }
-    if(ruleKey == 'color')
+    else if(ruleKey == 'color')
     {
-        for(let i=0; i<items.length; i++)
-        {
-            if(items[i][1] == ruleValue)
-            {
-                res.push(items[i]);
-                count++;
-            }
-        }
+        count = counter(items, ruleValue, 1);
     }
-    if(ruleKey == 'name')
+    else if(ruleKey == 'name')
     {
-        for(let i=0; i<items.length; i++)
-        {
-            if(items[i][2] == ruleValue)
-            {
-                res.push(items[i]);
-                count++;
-            }
-        }
+        count = counter(items, ruleValue, 2);    
     }
 
-    console.log(res);
-    console.log(count);
+    // console.log(res);
+    // console.log(count);
     return count;
 };
