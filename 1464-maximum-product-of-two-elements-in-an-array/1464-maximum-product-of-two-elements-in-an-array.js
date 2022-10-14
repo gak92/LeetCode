@@ -2,6 +2,12 @@
  * @param {number[]} nums
  * @return {number}
  */
+
+let swap = (nums, i, j) => {
+    let temp = nums[i];
+    nums[i] = nums[j];
+    nums[j] = temp;
+}
 var maxProduct = function(nums) {
     
     for(let i=0; i<nums.length-1; i++)
@@ -10,9 +16,7 @@ var maxProduct = function(nums) {
         {
             if(nums[i] > nums[j])               
             {
-                let temp = nums[i];
-                nums[i] = nums[j];
-                nums[j] = temp;
+                swap(nums, i, j);
             }
         }
     }
