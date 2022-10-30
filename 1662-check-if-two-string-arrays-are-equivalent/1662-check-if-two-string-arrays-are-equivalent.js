@@ -4,18 +4,29 @@
  * @return {boolean}
  */
 var arrayStringsAreEqual = function(word1, word2) {
-    let s1 = '';
-    let s2 = '';
+    let wp1 = 0, wp2 = 0;
+    let sp1 = 0, sp2 = 0;
     
-    for(let w of word1)
+    while(wp1 < word1.length && wp2 < word2.length)
     {
-        s1 += w;   
+        if(word1[wp1][sp1] !== word2[wp2][sp2])
+            return false;
+        sp1 += 1;
+        sp2 += 1;
+        
+        if(sp1 === word1[wp1].length)
+        {
+            wp1 += 1;
+            sp1 = 0;
+        }
+        if(sp2 === word2[wp2].length)
+        {
+            wp2 += 1;
+            sp2 = 0;
+        }
+        
     }
-    for(let w of word2)
-    {
-        s2 += w;
-    }
-
-    return s1 === s2;
+    
+    return wp1 === word1.length && wp2 === word2.length;
     
 };
