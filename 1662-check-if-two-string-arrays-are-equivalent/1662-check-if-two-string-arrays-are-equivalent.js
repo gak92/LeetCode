@@ -16,10 +16,6 @@ var arrayStringsAreEqual = function(word1, word2) {
         s2 += w;
     }
 
-    
-    if(s1 === s2)
-        return true;
-    else
-        return false;
+    return s1 === s2;
     
 };
