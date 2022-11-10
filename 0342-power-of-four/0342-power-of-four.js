@@ -17,9 +17,6 @@ var isPowerOfFour = function(n) {
         n = n / 4;              // 16/4 ===> 4 ,    4/4 = 1, 5/4 ==>1.222
     }
     
-    if(n === 1)
-        return true;
-    else
-        return false;
+    return n===1 ? true : false;
     
 };
